@@ -1,0 +1,7 @@
+{
+  "name": "TiendaLIEG",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
