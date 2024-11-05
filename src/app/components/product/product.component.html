@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Product List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let product of products">
+      <ion-card-header>
+        <ion-card-title>{{ product.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ product.description }}</p>
+        <p>Price: {{ product.price | currency:'USD' }}</p> <!-- Usa currency para el precio -->
+        <p>Stock: {{ product.stock }}</p>
+        <ion-row>
+          <ion-col *ngFor="let image of product.images">
+            <img [src]="image" alt="{{ product.name }}" width="100">
+          </ion-col>
+        </ion-row>
+        <p>Category: {{ product.category }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
