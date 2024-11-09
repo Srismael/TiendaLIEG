@@ -1,18 +1,23 @@
 <ion-header [translucent]="true">
+  <app-nav></app-nav>
   <ion-toolbar>
     <ion-title>login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
+ 
   <form>
-
     <ion-item>
-      <ion-input label="Email input" type="email" placeholder="email@domain.com"></ion-input>
+      <ion-input label="Email" type="email" placeholder="email@domain.com"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Password input" type="password" value="password"></ion-input>
+      <ion-input label="Password" type="password" value="password"></ion-input>
     </ion-item>
     <ion-button expand="full" type="submit" color="primary">Iniciar Sesión</ion-button>
   </form>
+ 
 </ion-content>
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>

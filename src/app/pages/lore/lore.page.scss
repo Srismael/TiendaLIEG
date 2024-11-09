@@ -1,0 +1,28 @@
+.centered-content {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén alineados verticalmente */
+    justify-content: flex-start; /* Ajusta el contenido hacia la parte superior */
+    align-items: center;
+    height: 100vh;
+    padding: 16px;
+    
+    .page-title {
+      margin-top: 40px;  /* Despega el título más de la parte superior */
+      text-align: center;
+  
+      h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+      }
+    }
+  
+    .lorem-text {
+      max-width: 600px; /* Define un ancho máximo para el texto */
+      margin-top: 20px; /* Despega el texto de abajo del título */
+      margin: 0 auto;   /* Centra el texto horizontalmente */
+      text-align: justify;
+      padding: 0 8px;   /* Añade algo de espacio estrecho en los bordes */
+    }
+  }
+  
