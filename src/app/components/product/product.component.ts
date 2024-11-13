@@ -19,9 +19,11 @@ export class ProductComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.productService.getProduct().subscribe({
-      next: (data: Product[]) => this.products = data,
-      error: (error) => console.error('Error fetching products:', error)
-    });
+    this.productService.getProduct().subscribe((res:any)=>{
+      this.products = res;
+    },(error)=>{
+      console.error('Error featching products:' , error)
+
+    })
   }
 }

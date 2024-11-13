@@ -1,18 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <form>
-
+  <form (ngSubmit)="onLogin()"> <!-- Llama al método onLogin -->
     <ion-item>
-      <ion-input label="Email input" type="email" placeholder="email@domain.com"></ion-input>
+      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="email@domain.com" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Password input" type="password" value="password"></ion-input>
+      <ion-input [(ngModel)]="password" name="password" type="password" placeholder="Contraseña" required></ion-input>
     </ion-item>
     <ion-button expand="full" type="submit" color="primary">Iniciar Sesión</ion-button>
   </form>
+  <ion-text class="ion-text-center" color="medium">
+    <p>¿No tienes cuenta? <a routerLink="/register">Regístrate aquí</a></p>
+  </ion-text>
 </ion-content>

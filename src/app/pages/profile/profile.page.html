@@ -1,13 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">profile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <app-nav></app-nav>
+
+  <div *ngIf="userData" class="ion-padding">
+    <h2>{{ userData.name }} {{ userData.lastname }}</h2>
+    <p>Email: {{ userData.email }}</p>
+    <p>Teléfono: {{ userData.phone }}</p>
+    <p>Dirección: {{ userData.address }}</p>
+  </div>
+
+  <ion-button (click)="logout()" color="danger" expand="full">
+    Cerrar Sesión
+  </ion-button>
 </ion-content>

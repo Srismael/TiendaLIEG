@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
@@ -21,5 +21,17 @@ export const routes: Routes = [
   {
     path: 'profile',
     loadComponent: () => import('./pages/profile/profile.page').then( m => m.ProfilePage)
+  },
+  {
+    path: 'history',
+    loadComponent: () => import('./pages/history/history.page').then( m => m.HistoryPage)
+  },
+  {
+    path: 'cart',
+    loadComponent: () => import('./pages/cart/cart.page').then( m => m.CartPage)
+  },
+  {
+    path: 'store',
+    loadComponent: () => import('./pages/store/store.page').then( m => m.StorePage)
   },
 ];
