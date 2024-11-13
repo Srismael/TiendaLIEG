@@ -1,0 +1,27 @@
+ion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; // Ocupa toda la altura de la pantalla
+    padding: 0;
+  }
+  
+  form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column; // Asegura que los elementos dentro del formulario estén en columna
+    align-items: center; // Centra el contenido del formulario horizontalmente
+  }
+  
+  ion-item {
+    width: 100%; // Ocupa todo el ancho del formulario
+    max-width: 400px; // Para que el ancho se mantenga consistente
+    margin-bottom: 16px;
+  }
+  
+  ion-button {
+    width: 100%; // Botón expandido a todo el ancho del formulario
+    max-width: 400px;
+    margin-top: 24px;
+  }

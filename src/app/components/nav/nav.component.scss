@@ -1,6 +1,11 @@
 .center-buttons {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
+  display: flex;
+  justify-content: space-evenly;
+     
+  width: 100%;
   
+}
+
+.ion-icon{
+  padding-inline: 100px;
+}

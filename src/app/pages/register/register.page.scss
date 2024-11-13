@@ -1,0 +1,28 @@
+ion-content {
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+  
+    .form-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+  
+    ion-item {
+      margin-bottom: 0px;
+    }
+  
+    ion-button {
+      margin-top: 0px;
+    }
+  
+    ion-input {
+      margin-top: 13px;
+    }
+  }
+  ion-footer {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }

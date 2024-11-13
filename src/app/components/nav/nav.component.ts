@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { logoIonic, home, cart, gameController, person, storefront } from 'ionicons/icons';
+import { logoIonic, home, cart, gameController, person, storefront, logInSharp, readerSharp  } from 'ionicons/icons';
 
 @Component({
   selector: 'app-nav',
@@ -14,7 +14,7 @@ import { logoIonic, home, cart, gameController, person, storefront } from 'ionic
 export class NavComponent  implements OnInit {
 
   constructor() {
-    addIcons({ logoIonic, home, cart, gameController, person, storefront });
+    addIcons({ logoIonic, home, cart, gameController, person, storefront, logInSharp, readerSharp });
    }
 
   ngOnInit() {}
