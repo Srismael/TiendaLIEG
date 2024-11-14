@@ -13,16 +13,20 @@
       h2 {
         font-size: 24px;
         font-weight: bold;
-        color: #333;
+        color: #ececec;
       }
     }
   
     .lorem-text {
-      max-width: 600px; /* Define un ancho máximo para el texto */
+      max-width: 750px; /* Define un ancho máximo para el texto */
       margin-top: 20px; /* Despega el texto de abajo del título */
       margin: 0 auto;   /* Centra el texto horizontalmente */
       text-align: justify;
       padding: 0 8px;   /* Añade algo de espacio estrecho en los bordes */
       line-height: 26px;
     }
+  }
+  #LiegLogo{
+    max-width: 250px;
+    margin: 0 auto;  
   }

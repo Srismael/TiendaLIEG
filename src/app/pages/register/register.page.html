@@ -5,50 +5,58 @@
 </ion-header>
 
 <ion-content scroll-y="true">
-  <div class="form-container">
-    <form>
-      <ion-item>
-        <ion-label position="floating">Nombre</ion-label>
-        <ion-input formControlName="name"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Apellido</ion-label>
-        <ion-input formControlName="lastname"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input formControlName="email" type="email"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input formControlName="password" type="password"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Teléfono</ion-label>
-        <ion-input formControlName="phone" type="tel"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Rol</ion-label>
-        <ion-select formControlName="rol">
-          <ion-select-option value="Admin">Admin</ion-select-option>
-          <ion-select-option value="Usuario">Usuario</ion-select-option>
-        </ion-select>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Dirección</ion-label>
-        <ion-input formControlName="address"></ion-input>
-      </ion-item>
-
-      <ion-button expand="full" type="submit">Registrar</ion-button>
-    </form>
-  </div>
+ 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Register</ion-card-title>
+    </ion-card-header>
+    <div class="form-container">
+      <form>
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input formControlName="name"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input formControlName="lastname"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email" type="email"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Teléfono</ion-label>
+          <ion-input formControlName="phone" type="tel"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Rol</ion-label>
+          <ion-select formControlName="rol">
+            <ion-select-option value="Admin">Admin</ion-select-option>
+            <ion-select-option value="Usuario">Usuario</ion-select-option>
+          </ion-select>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Dirección</ion-label>
+          <ion-input formControlName="address"></ion-input>
+        </ion-item>
+  
+        <ion-button expand="full" type="submit">Registrar</ion-button>
+      </form>
+    </div>
+  </ion-card>
 </ion-content>
+
+
 
 <ion-footer>
   <app-footer></app-footer>

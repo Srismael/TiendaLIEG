@@ -20,6 +20,18 @@ ion-content {
       margin-top: 13px;
     }
   }
+
+  ion-card-header,
+  ion-card-content {
+    text-align: center;
+  }
+  ion-card {
+    
+    max-width:600px; /* Ajusta el ancho máximo según tus necesidades */
+    max-height: 700px;
+    margin: 0 auto;   /* Centra el card horizontalmente */
+    padding: 20px;    /* Agrega un poco de relleno alrededor del contenido */
+  }
   ion-footer {
     background-color: #222;
     color: white;
