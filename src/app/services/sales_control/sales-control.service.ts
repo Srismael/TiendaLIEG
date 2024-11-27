@@ -13,7 +13,10 @@ export class SalesControlService {
 
   constructor(private http: HttpClient) { }
 
-  getSalesControl(): Observable<SalesControl[]>{
-    return this.http.get<SalesControl[]>(`${this.apiUrl}/salescontrol`);
+  getSalesControl(): Observable<SalesControl[]> {
+    return this.http.get<SalesControl[]>(`${this.apiUrl}/sales`);
+  }
+  createSale(sale: SalesControl): Observable<SalesControl> {
+    return this.http.post<SalesControl>(`${this.apiUrl}/create`, sale);
   }
 }

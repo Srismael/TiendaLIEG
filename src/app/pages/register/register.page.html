@@ -6,32 +6,53 @@
 
 <ion-content scroll-y="true">
   <div class="form-container">
-    <form>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <!-- Campo Nombre -->
       <ion-item>
         <ion-label position="floating">Nombre</ion-label>
         <ion-input formControlName="name"></ion-input>
       </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
+        El nombre es obligatorio.
+      </ion-text>
 
+      <!-- Campo Apellido -->
       <ion-item>
         <ion-label position="floating">Apellido</ion-label>
         <ion-input formControlName="lastname"></ion-input>
       </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.get('lastname')?.invalid && registerForm.get('lastname')?.touched">
+        El apellido es obligatorio.
+      </ion-text>
 
+      <!-- Campo Email -->
       <ion-item>
         <ion-label position="floating">Email</ion-label>
         <ion-input formControlName="email" type="email"></ion-input>
       </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+        Introduce un email válido.
+      </ion-text>
 
+      <!-- Campo Contraseña -->
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
         <ion-input formControlName="password" type="password"></ion-input>
       </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+        La contraseña debe tener al menos 6 caracteres.
+      </ion-text>
 
+      <!-- Campo Teléfono -->
       <ion-item>
         <ion-label position="floating">Teléfono</ion-label>
         <ion-input formControlName="phone" type="tel"></ion-input>
       </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched">
+        El teléfono es obligatorio.
+      </ion-text>
 
+      <!-- Campo Rol -->
       <ion-item>
         <ion-label position="floating">Rol</ion-label>
         <ion-select formControlName="rol">
@@ -40,12 +61,19 @@
         </ion-select>
       </ion-item>
 
+      <!-- Campo Dirección -->
       <ion-item>
         <ion-label position="floating">Dirección</ion-label>
         <ion-input formControlName="address"></ion-input>
       </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.get('address')?.invalid && registerForm.get('address')?.touched">
+        La dirección es obligatoria.
+      </ion-text>
 
-      <ion-button expand="full" type="submit">Registrar</ion-button>
+      <!-- Botón Registrar -->
+      <ion-button expand="full" type="submit" [disabled]="registerForm.invalid">
+        Registrar
+      </ion-button>
     </form>
   </div>
 </ion-content>

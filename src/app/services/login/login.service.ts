@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { User } from 'src/app/models/user/user';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +30,17 @@ export class loginService {
 
   logout() {
     localStorage.removeItem('token'); // Borra el token al cerrar sesión
+  }
+
+  register(user: User): Observable<any> {
+    return this.http.post(`${this.apiUrl}/auth/register`, user);
+  }
+  getUserId(): string | null {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const decoded: any = jwtDecode(token); // Decodifica el token
+      return decoded.userId || null; // Asegúrate de que el campo 'userId' esté en el token
+    }
+    return null;
   }
 }

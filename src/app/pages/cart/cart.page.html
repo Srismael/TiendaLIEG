@@ -5,8 +5,35 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-list>
+    <!-- Iterar sobre los carritos -->
+    <ion-item *ngFor="let cart of cartItems">
+      <ion-label>
+        <h2>Carrito: {{ cart.id_cart }}</h2> <!-- Mostrando el ID del carrito -->
+        <!-- Iterar sobre los productos dentro del carrito -->
+        <ion-list>
+          <ion-item *ngFor="let item of cart.products">
+            <ion-label>
+              <h2>{{ item.id_product }}</h2> <!-- Mostrando el ID del producto -->
+              <p>Precio: {{ item.price_per_unit | currency }}</p> <!-- Mostrando el precio por unidad -->
+              <p>Cantidad: {{ item.quantity }}</p> <!-- Mostrando la cantidad -->
+            </ion-label>
+            <ion-button (click)="removeFromCart(cart.id_cart, item.id_product)" color="danger">Eliminar</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
+  <!-- Mostrar el total del carrito -->
   <ion-footer>
-    <app-footer></app-footer>
+    <div>
+      <p>Total: {{ totalCart | currency }}</p> <!-- Mostrando el total con formato de moneda -->
+      <ion-button expand="full" (click)="checkout()">Comprar</ion-button>
+    </div>
   </ion-footer>
 </ion-content>
+
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>
