@@ -18,12 +18,12 @@ export class LoginPage implements OnInit {
   email: string = '';
   password: string = '';
 
-  constructor(private loginService: loginService, private router: Router) {}
+  constructor(private LoginService: loginService, private router: Router) {}
 
   ngOnInit() {}
 
   onLogin() {
-    this.loginService.login(this.email, this.password).subscribe(
+    this.LoginService.login(this.email, this.password).subscribe(
       (response: any) => {
         localStorage.setItem('token', response.access_token); // Guarda el token JWT
         this.router.navigate(['/home']); // Navega a la página principal tras el login

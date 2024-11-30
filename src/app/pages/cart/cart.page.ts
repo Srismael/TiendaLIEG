@@ -1,63 +1,108 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonFooter, IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonLabel, IonButton } from '@ionic/angular/standalone';
+import {IonInput, IonFooter, IonContent, IonHeader, IonTitle, IonToolbar,  IonItem, IonLabel, IonButton, IonThumbnail,  ToastController, IonicModule, IonSelect } from '@ionic/angular'; // Simplificado
 import { NavComponent } from "../../components/nav/nav.component";
 import { FooterComponent } from "../../components/footer/footer.component";
-import { ShoppingCartService } from 'src/app/services/shopping_cart/shopping-cart.service';
-import { CartProduct, ShoppingCart } from 'src/app/models/shopping_cart/shopping_cart'; // Asegúrate de importar el modelo correcto
+import { CartService } from 'src/app/services/cart.service'; // Asegúrate de que el CartService esté correctamente importado
+import { CartItem } from 'src/app/models/CartItem/cart-item';
+import { HttpErrorResponse } from '@angular/common/http';
 import { SalesControlService } from 'src/app/services/sales_control/sales-control.service';
 import { SalesControl } from 'src/app/models/sales_control/sales_control';
+import { loginService } from 'src/app/services/login/login.service';
+
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.page.html',
   styleUrls: ['./cart.page.scss'],
   standalone: true,
-  imports: [IonButton, IonLabel, IonItem, IonList, FooterComponent, IonFooter, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, NavComponent]
+  imports: [ CommonModule,FormsModule, IonicModule]
 })
 export class ShoppingCartPage implements OnInit {
-  cartItems: ShoppingCart[] = [];  // Aquí almacenamos los carritos
-  totalCart: number = 0; // Total del carrito
 
-  constructor(private cartService: ShoppingCartService) {}
+  cartItems: CartItem[] = []; // Lista de productos en el carrito
+  totalCart: number = 0;  // Total del carrito
+  address: string = '';  // Dirección del usuario
+  paymentMethod: string = 'PayPal';  // Método de pago seleccionado
+  userId: string | null = '';  // Almacenamos el ID del usuario autenticado
+
+  constructor(
+    private cartService: CartService, 
+    private salesControlService: SalesControlService,
+    private toastController: ToastController,
+    private loginService: loginService // Inyectamos el servicio de login
+  ) {}
 
   ngOnInit() {
-    this.loadCart();  // Cargamos el carrito al iniciar
+    this.loadCart();
   }
 
   loadCart() {
-    const userId = 'user_id_here';  // Obtén el ID del usuario autenticado
-    this.cartService.getCartByUser(userId).subscribe(
-      (cartArray: ShoppingCart[]) => {  // Asegúrate de que el tipo de 'cartArray' sea ShoppingCart[]
-        this.cartItems = cartArray;
-        this.calculateTotal();  // Calculamos el total del carrito
-      },
-      (error) => console.error('Error loading cart:', error)
-    );
+    this.cartItems = this.cartService.getCartItems();  // Cargar productos desde el servicio
+    this.calculateTotal();  // Calcular el total del carrito
+    console.log('Carrito cargado:', this.cartItems);
   }
 
-  // Función para eliminar un producto de un carrito
-  removeFromCart(cartId: string, productId: string) {
-    const cart = this.cartItems.find(c => c.id_cart === cartId);  // Encontramos el carrito con el id correspondiente
-    if (cart) {
-      cart.products = cart.products.filter(product => product.id_product !== productId);  // Eliminamos el producto del carrito
-      this.calculateTotal();  // Recalculamos el total después de eliminar un producto
-    }
-  }
-
-  // Función para calcular el total del carrito
   calculateTotal() {
-    this.totalCart = this.cartItems.reduce((total, cart) => {
-      // Calculamos el total de todos los carritos
-      return total + cart.products.reduce((cartTotal, product) => {
-        return cartTotal + (product.price_per_unit * product.quantity);  // Calculamos el total de los productos en el carrito
-      }, 0);
-    }, 0);
+    this.totalCart = this.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
   }
 
-  // Lógica para proceder a la compra
-  checkout() {
-    console.log('Compra realizada');
+  removeFromCart(productId: string) {
+    this.cartService.removeFromCart(productId);  // Eliminar producto por ID
+    this.loadCart();  // Recargar el carrito después de eliminar
+  }
+
+  async checkout() {
+    // Obtener el ID del usuario autenticado usando loginService
+    const userId = this.loginService.getUserId(); // Usamos getUserId() del loginService
+
+    if (!userId) {
+      const toast = await this.toastController.create({
+        message: 'El usuario no está autenticado',
+        duration: 2000,
+        color: 'danger',
+      });
+      toast.present();
+      return;
+    }
+
+    // Construir el objeto para la API
+    const saleData = {
+      id_user: userId,  // Usamos el ID del usuario obtenido
+      products_sales: this.cartItems.map(item => ({
+        id_product: item.id_product,
+        quantity: item.quantity,
+        price_per_unit: item.price,
+      })),
+      total_sale: this.totalCart,
+      payment: this.paymentMethod,  // Método de pago, puedes obtenerlo desde un campo del formulario
+      address: this.address,  // Dirección, puedes obtenerla desde un campo del formulario
+    };
+
+    // Enviar los datos a la API
+    this.salesControlService.createSale(saleData).subscribe(
+      async (response: any) => {
+        const toast = await this.toastController.create({
+          message: 'Compra realizada con éxito',
+          duration: 2000,
+          color: 'success',
+        });
+        toast.present();
+
+        // Limpiar el carrito
+        this.cartService.clearCart();
+        this.loadCart();
+      },
+      async (error: HttpErrorResponse) => {
+        const toast = await this.toastController.create({
+          message: 'Error al realizar la compra',
+          duration: 2000,
+          color: 'danger',
+        });
+        toast.present();
+        console.error('Error en el checkout:', error.message);
+      }
+    );
   }
 }

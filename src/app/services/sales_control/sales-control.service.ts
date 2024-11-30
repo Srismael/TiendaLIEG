@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SalesControl } from 'src/app/models/sales_control/sales_control';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -17,6 +17,6 @@ export class SalesControlService {
     return this.http.get<SalesControl[]>(`${this.apiUrl}/sales`);
   }
   createSale(sale: SalesControl): Observable<SalesControl> {
-    return this.http.post<SalesControl>(`${this.apiUrl}/create`, sale);
+    return this.http.post<SalesControl>(`${this.apiUrl}/sales`, sale); // Ajuste aquí
   }
 }

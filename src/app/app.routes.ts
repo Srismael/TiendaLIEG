@@ -28,12 +28,13 @@ export const routes: Routes = [
   },
   {
     path: 'cart',
-    loadComponent: () => import('./pages/cart/cart.page').then( m => m.CartPage)
+    loadComponent: () => import('./pages/cart/cart.page').then( m => m.ShoppingCartPage)
   },
   {
     path: 'store',
     loadComponent: () => import('./pages/store/store.page').then( m => m.StorePage)
-  },  {
+  },
+  {
     path: 'lore',
     loadComponent: () => import('./pages/lore/lore.page').then( m => m.LorePage)
   },

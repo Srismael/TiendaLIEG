@@ -6,7 +6,7 @@ import { NavComponent } from './components/nav/nav.component';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   standalone: true,
-  imports: [IonApp, IonRouterOutlet, NavComponent],
+  imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
   constructor() {}

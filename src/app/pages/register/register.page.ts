@@ -27,7 +27,7 @@ export class RegisterPage {
 
   constructor(
     private fb: FormBuilder,
-    private userService: loginService,
+    private loginService: loginService,
     private router: Router
   ) {
     // Configuración del formulario con validadores
@@ -49,7 +49,7 @@ export class RegisterPage {
     if (this.registerForm.valid) {
       const user: User = this.registerForm.value; // Mapeo del formulario a la interfaz User
 
-      this.userService.register(user).subscribe({
+      this.loginService.register(user).subscribe({
         next: (response) => {
           console.log('Usuario registrado:', response);
           alert('Usuario registrado exitosamente');

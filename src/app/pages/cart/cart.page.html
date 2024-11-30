@@ -1,39 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <app-nav></app-nav>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
+<ion-content>
   <ion-list>
-    <!-- Iterar sobre los carritos -->
     <ion-item *ngFor="let cart of cartItems">
+      <ion-thumbnail slot="start">
+        <img [src]="cart.images[0] || 'assets/placeholder.png'" alt="{{ cart.name }}">
+      </ion-thumbnail>
       <ion-label>
-        <h2>Carrito: {{ cart.id_cart }}</h2> <!-- Mostrando el ID del carrito -->
-        <!-- Iterar sobre los productos dentro del carrito -->
-        <ion-list>
-          <ion-item *ngFor="let item of cart.products">
-            <ion-label>
-              <h2>{{ item.id_product }}</h2> <!-- Mostrando el ID del producto -->
-              <p>Precio: {{ item.price_per_unit | currency }}</p> <!-- Mostrando el precio por unidad -->
-              <p>Cantidad: {{ item.quantity }}</p> <!-- Mostrando la cantidad -->
-            </ion-label>
-            <ion-button (click)="removeFromCart(cart.id_cart, item.id_product)" color="danger">Eliminar</ion-button>
-          </ion-item>
-        </ion-list>
+        <h2>{{ cart.name }}</h2>
+        <p>{{ cart.description }}</p>
+        <p>Price: {{ cart.price | currency:'USD' }} x {{ cart.quantity }}</p>
       </ion-label>
+      <ion-button color="danger" (click)="removeFromCart(cart.id_product)">Eliminar</ion-button>
     </ion-item>
   </ion-list>
 
-  <!-- Mostrar el total del carrito -->
-  <ion-footer>
-    <div>
-      <p>Total: {{ totalCart | currency }}</p> <!-- Mostrando el total con formato de moneda -->
-      <ion-button expand="full" (click)="checkout()">Comprar</ion-button>
-    </div>
-  </ion-footer>
-</ion-content>
+  <!-- Formulario para los datos del pago y la dirección -->
+  <div class="checkout-details">
+    <ion-item>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input [(ngModel)]="address" placeholder="Ingresa tu dirección" required></ion-input>
+    </ion-item>
 
-<ion-footer>
-  <app-footer></app-footer>
-</ion-footer>
+    <ion-item>
+      <ion-label position="floating">Método de pago</ion-label>
+      <ion-select [(ngModel)]="paymentMethod" placeholder="Selecciona un método de pago" required>
+        <ion-select-option value="PayPal">PayPal</ion-select-option>
+        <ion-select-option value="Tarjeta de crédito">Tarjeta de crédito</ion-select-option>
+        <ion-select-option value="Transferencia bancaria">Transferencia bancaria</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <div class="cart-total">
+    <p>Total: {{ totalCart | currency:'USD' }}</p>
+    <ion-button expand="full" (click)="checkout()">Comprar</ion-button>
+  </div>
+</ion-content>
