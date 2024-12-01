@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonLabel, IonItem, IonButton, IonInput, IonText, IonFooter } from '@ionic/angular/standalone';
+import { IonCardContent, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonTitle, IonToolbar, IonLabel, IonItem, IonButton, IonInput, IonText, IonFooter, IonCardHeader, IonCard } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { loginService } from 'src/app/services/login/login.service';
 import { FooterComponent } from "../../components/footer/footer.component";
 import { RouterLink } from '@angular/router';
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.page.html',
-    styleUrls: ['./login.page.scss'],
-    imports: [RouterLink, IonText, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonLabel, IonItem, IonButton, IonInput, FooterComponent, IonFooter]
+  selector: 'app-login',
+  templateUrl: './login.page.html',
+  styleUrls: ['./login.page.scss'],
+  standalone: true,
+  imports: [IonCardContent, IonCardSubtitle, IonCardTitle, IonCard, IonCardHeader, RouterLink, IonText, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonLabel, IonItem, IonButton, IonInput, FooterComponent,IonFooter]
 })
 export class LoginPage implements OnInit {
   email: string = '';

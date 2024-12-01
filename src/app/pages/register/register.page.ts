@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonContent, IonFooter, IonButton, IonItem, IonLabel, IonSelectOption, IonicModule } from '@ionic/angular';
-import { RouterLink } from '@angular/router';
+import { IonContent, IonFooter, IonButton, IonItem, IonLabel, IonSelectOption, IonicModule, IonCard, IonCardHeader, IonCardContent, IonCardSubtitle, IonCardTitle, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
 import { FooterComponent } from "../../components/footer/footer.component";
+import { RouterLink, Router } from '@angular/router';
 import { loginService } from 'src/app/services/login/login.service';
-import { Router } from '@angular/router';
 import { User } from 'src/app/models/user/user';
 
 @Component({
-    selector: 'app-register',
-    templateUrl: './register.page.html',
-    styleUrls: ['./register.page.scss'],
-    imports: [
-        RouterLink,
-        IonicModule, // Solo IonicModule es necesario para todos los componentes de Ionic
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        FooterComponent
-    ]
+  selector: 'app-register',
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    IonicModule,
+    RouterLink,
+    FooterComponent
+  ]
 })
 export class RegisterPage {
   registerForm: FormGroup;

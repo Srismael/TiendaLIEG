@@ -25,3 +25,23 @@ ion-content {
     max-width: 400px;
     margin-top: 24px;
   }
+  ion-card {
+    
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+  }
+  
+  ion-card-header,
+  ion-card-content {
+    text-align: center;
+  }
+
+  ion-card {
+    
+    max-width: 400px; /* Ajusta el ancho máximo según tus necesidades */
+    max-height: 350px;
+    margin: 0 auto;   /* Centra el card horizontalmente */
+    padding: 20px;    /* Agrega un poco de relleno alrededor del contenido */
+  }

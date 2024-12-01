@@ -1,3 +1,22 @@
-<ion-content [fullscreen]="true">
-  <app-nav></app-nav>
+<app-nav></app-nav>
+<ion-content>
+  <!-- Título principal -->
+  <div class="game-section">
+    <h2 class="section-title">¡Puedes descargar el juego en estas plataformas!</h2>
+    
+    <!-- Imagen grande del juego y título -->
+    <div class="game-banner">
+      <ion-img id="LiegLogo" src="assets/img/"></ion-img> <!-- Imagen del juego -->
+      <h3 class="game-title">¡Juega ahora!</h3>
+    </div>
+    
+    <!-- Plataformas -->
+    <div class="platforms">
+      <ion-img src="assets/img/steam.jpg" class="platform-logo"></ion-img>
+      <ion-img src="assets/img/Epic_Games_Store_29.png" class="platform-logo"></ion-img>
+
+      <ion-img src="assets/img/nintendo-switch-removebg-preview.png" class="platform-logo"></ion-img>
+    </div>
+  </div>
 </ion-content>
+<app-footer></app-footer>
