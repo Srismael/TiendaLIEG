@@ -7,11 +7,10 @@ import { NavComponent } from "../../components/nav/nav.component";
 import { ProductComponent } from "../../components/product/product.component";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
-  standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, FooterComponent, NavComponent, ProductComponent]
+    selector: 'app-home',
+    templateUrl: './home.page.html',
+    styleUrls: ['./home.page.scss'],
+    imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, FooterComponent, NavComponent, ProductComponent]
 })
 export class HomePage implements OnInit {
 

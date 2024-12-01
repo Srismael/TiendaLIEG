@@ -5,11 +5,10 @@ import { addIcons } from 'ionicons';
 import { logoIonic, home, cart, gameController, person, storefront, logInSharp, readerSharp  } from 'ionicons/icons';
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss'],
-  standalone : true,
-  imports: [IonicModule, RouterLink ]
+    selector: 'app-nav',
+    templateUrl: './nav.component.html',
+    styleUrls: ['./nav.component.scss'],
+    imports: [IonicModule, RouterLink]
 })
 export class NavComponent  implements OnInit {
 

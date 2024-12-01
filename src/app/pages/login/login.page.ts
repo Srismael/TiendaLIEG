@@ -8,11 +8,10 @@ import { FooterComponent } from "../../components/footer/footer.component";
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
-  standalone: true,
-  imports: [RouterLink, IonText, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonLabel, IonItem, IonButton, IonInput, FooterComponent,IonFooter]
+    selector: 'app-login',
+    templateUrl: './login.page.html',
+    styleUrls: ['./login.page.scss'],
+    imports: [RouterLink, IonText, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonLabel, IonItem, IonButton, IonInput, FooterComponent, IonFooter]
 })
 export class LoginPage implements OnInit {
   email: string = '';

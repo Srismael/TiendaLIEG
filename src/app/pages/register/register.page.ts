@@ -9,18 +9,17 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/models/user/user';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.page.html',
-  styleUrls: ['./register.page.scss'],
-  standalone: true,
-  imports: [
-    RouterLink,
-    IonicModule, // Solo IonicModule es necesario para todos los componentes de Ionic
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    FooterComponent
-  ]
+    selector: 'app-register',
+    templateUrl: './register.page.html',
+    styleUrls: ['./register.page.scss'],
+    imports: [
+        RouterLink,
+        IonicModule, // Solo IonicModule es necesario para todos los componentes de Ionic
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FooterComponent
+    ]
 })
 export class RegisterPage {
   registerForm: FormGroup;

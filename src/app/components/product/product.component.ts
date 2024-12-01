@@ -12,11 +12,11 @@ import { CartService } from 'src/app/services/cart.service';
 import { CartItem } from 'src/app/models/CartItem/cart-item';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss'],
-  standalone: true,
-  imports: [IonicModule, CommonModule],
+    selector: 'app-product',
+    templateUrl: './product.component.html',
+    styleUrls: ['./product.component.scss'],
+    imports: [IonicModule, CommonModule],
+    standalone: true
 })
 export class ProductComponent implements OnInit {
   products: Product[] = []; // Arreglo para almacenar los productos

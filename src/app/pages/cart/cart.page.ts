@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {IonInput, IonFooter, IonContent, IonHeader, IonTitle, IonToolbar,  IonItem, IonLabel, IonButton, IonThumbnail,  ToastController, IonicModule, IonSelect } from '@ionic/angular'; // Simplificado
+import { ToastController, IonicModule } from '@ionic/angular'; // Simplificado
 import { NavComponent } from "../../components/nav/nav.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { CartService } from 'src/app/services/cart.service'; // Asegúrate de que el CartService esté correctamente importado
@@ -13,11 +13,11 @@ import { loginService } from 'src/app/services/login/login.service';
 
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.page.html',
-  styleUrls: ['./cart.page.scss'],
-  standalone: true,
-  imports: [ CommonModule,FormsModule, IonicModule]
+    selector: 'app-cart',
+    templateUrl: './cart.page.html',
+    styleUrls: ['./cart.page.scss'],
+    imports: [CommonModule, FormsModule, IonicModule],
+    standalone: true
 })
 export class ShoppingCartPage implements OnInit {
 

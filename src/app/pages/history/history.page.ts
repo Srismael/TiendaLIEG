@@ -5,11 +5,10 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/stan
 import { NavComponent } from 'src/app/components/nav/nav.component';
 
 @Component({
-  selector: 'app-history',
-  templateUrl: './history.page.html',
-  styleUrls: ['./history.page.scss'],
-  standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, NavComponent]
+    selector: 'app-history',
+    templateUrl: './history.page.html',
+    styleUrls: ['./history.page.scss'],
+    imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, NavComponent]
 })
 export class HistoryPage implements OnInit {
 

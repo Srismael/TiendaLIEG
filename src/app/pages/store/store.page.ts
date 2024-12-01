@@ -7,11 +7,10 @@ import { NavComponent } from 'src/app/components/nav/nav.component';
 
 
 @Component({
-  selector: 'app-store',
-  templateUrl: './store.page.html',
-  styleUrls: ['./store.page.scss'],
-  standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, ProductComponent, NavComponent]
+    selector: 'app-store',
+    templateUrl: './store.page.html',
+    styleUrls: ['./store.page.scss'],
+    imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, ProductComponent, NavComponent]
 })
 export class StorePage implements OnInit {
 

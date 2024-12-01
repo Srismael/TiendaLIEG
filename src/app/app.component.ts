@@ -3,10 +3,10 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { NavComponent } from './components/nav/nav.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  standalone: true,
-  imports: [IonApp, IonRouterOutlet],
+    selector: 'app-root',
+    templateUrl: 'app.component.html',
+    imports: [IonApp, IonRouterOutlet],
+    standalone: true
 })
 export class AppComponent {
   constructor() {}
