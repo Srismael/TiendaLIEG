@@ -7,10 +7,10 @@
       "installMode": "prefetch",
       "resources": {
         "files": [
-          "/favicon.ico",
+          "./assets/img/trap_game_icon.png",
           "/index.csr.html",
           "/index.html",
-          "/TiendaLIEG/src/manifest.webmanifest",
+          "/TiendaLIEG/src/app/manifest.webmanifest",
           "/*.css",
           "/*.js"
         ]

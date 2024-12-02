@@ -17,7 +17,7 @@ import { User } from 'src/app/models/user/user';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    RouterLink,
+    
     FooterComponent
   ]
 })

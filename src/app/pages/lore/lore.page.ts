@@ -10,7 +10,7 @@ import { NavComponent } from "../../components/nav/nav.component";
   templateUrl: './lore.page.html',
   styleUrls: ['./lore.page.scss'],
   standalone: true,
-  imports: [IonImg, IonNav, IonFooter, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, FooterComponent, NavComponent]
+  imports: [IonImg,  IonFooter, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, FooterComponent, NavComponent]
 })
 export class LorePage implements OnInit {
 

@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonCardContent, IonCardSubtitle, IonCardTitle, IonCard, IonCardHeader, RouterLink, IonText, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonLabel, IonItem, IonButton, IonInput, FooterComponent,IonFooter]
+  imports: [ IonCardTitle, IonCard, IonCardHeader, RouterLink, IonText, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,  IonItem, IonButton, IonInput, FooterComponent,IonFooter]
 })
 export class LoginPage implements OnInit {
   email: string = '';

@@ -10,7 +10,7 @@ import { ProductComponent } from "../../components/product/product.component";
     selector: 'app-home',
     templateUrl: './home.page.html',
     styleUrls: ['./home.page.scss'],
-    imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, FooterComponent, NavComponent, ProductComponent]
+    imports: [IonContent,  CommonModule, FormsModule, FooterComponent, NavComponent, ]
 })
 export class HomePage implements OnInit {
 
