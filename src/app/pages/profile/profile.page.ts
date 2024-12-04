@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
     selector: 'app-profile',
     templateUrl: './profile.page.html',
     styleUrls: ['./profile.page.scss'],
-    imports: [IonButton, IonContent,  CommonModule, FormsModule, NavComponent]
+    imports: [IonButton, IonContent,  CommonModule, FormsModule, NavComponent],
+    standalone: true
 })
 export class ProfilePage implements OnInit {
 

@@ -1,14 +1,14 @@
 <ion-content [fullscreen]="true">
   <app-nav></app-nav>
 
-  <div *ngIf="userData" class="ion-padding">
+  <div class="user-profile-container" *ngIf="userData">
     <h2>{{ userData.name }} {{ userData.lastname }}</h2>
     <p>Email: {{ userData.email }}</p>
     <p>Teléfono: {{ userData.phone }}</p>
     <p>Dirección: {{ userData.address }}</p>
-  </div>
 
-  <ion-button (click)="logout()" color="danger" >
-    Cerrar Sesión
-  </ion-button>
+    <ion-button (click)="logout()" color="danger" class="logout-button">
+      Cerrar Sesión
+    </ion-button>
+  </div>
 </ion-content>

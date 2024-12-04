@@ -1,42 +1,61 @@
-game-section {
+.game-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.game-banner {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+
+  ion-img {
+    width: 100%; /* Ocupar todo el ancho disponible */
+    height: 300px; /* Limitar la altura */
+    object-fit: cover; /* Ajustar el contenido dentro del contenedor */
+    margin-bottom: 10px;
+  }
+
+  .game-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+}
+
+.platforms {
+  display: flex;
+  justify-content: space-evenly; /* Espacio uniforme entre las imágenes */
+  width: 100%;
+  flex-wrap: wrap; /* Asegura que las imágenes se acomoden si hay falta de espacio */
+
+  .platform-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-  }
-  
-  .section-title {
-    font-size: 24px;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 0 10px;
+    width: 250px; /* Fijo el ancho de cada ítem para mantener el diseño consistente */
   }
-  
-  .game-banner {
+
+  .platform-logo {
+    width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+    height: auto;
+    margin-bottom: 15px; /* Espacio entre la imagen y el botón */
+  }
+
+  ion-button {
+    --background: #007bff; /* Color de fondo del botón */
+    --color: #fff; /* Texto en blanco */
+    margin-top: auto; /* Alineación con la parte inferior */
+    width: 200px; /* Ajustar el ancho del botón */
     text-align: center;
-    margin-bottom: 20px;
-    wi
-  
-    ion-img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 10px;
-    }
-  
-    .game-title {
-      font-size: 28px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
   }
-  
-  .platforms {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    
-    .platform-logo {
-      width: 250px; /* Ajusta el tamaño de las imágenes */
-      height: auto;
-    }
-  }
-  
+}

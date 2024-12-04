@@ -1,5 +1,62 @@
-<ion-content >
+<ion-content [fullscreen]="true">
   <app-nav></app-nav>
+
+  <!-- Imagen estática al inicio -->
+  <div class="hero-image">
+    <ion-img src="assets/img/panoramica.jpeg" alt="Imagen principal de L.I.E.G"></ion-img>
+  </div>
+
+  <!-- Título de bienvenida -->
+  <div class="welcome-message">
+    <h2>Bienvenidos a L.I.E.G</h2>
+    <p *ngIf="!isExpanded">
+      Trap Game la empresa desarrolladora de videojuegos, nuestra empresa se enfocara en el desarrollo de videojuegos...
   
+      Trap Game la empresa desarrolladora de videojuegos, nuestra empresa se enfocara en el desarrollo de videojuegos 
+      de terror que combinan elementos psicológicos, narrativa profunda y mecánicas de juego innovadoras, buscando generar 
+      un impacto en los jugadores. Nos dirigimos a una audiencia que valora las historias bien elaboradas, los desafíos 
+      estratégicos y la capacidad de un juego para sumergir al jugador en un ambiente misterioso.
+      Trap Game se diferencia por un enfoque narrativo no solo dentro del propio videojuego, sino dentro de todo el 
+      ecosistema que conforma nuestra empresa creando una experiencia mayormente inversiva para nuestros consumidores.
+    </p>
+    <ion-button 
+  expand="block" 
+  fill="outline" 
+  (click)="toggleText()" 
+  class="mobile-only">
+  {{ isExpanded ? 'Leer más...' : 'Leer menos' }}
+</ion-button>
+
+  </div>
+
+  <!-- Sección sobre TrapGame (Misión, Visión, Valores) -->
+  <div class="company-info">
+    <h3>Conoce TrapGame</h3>
+    <div class="info-container">
+      <div class="info-card">
+        <h4>Misión</h4>
+        <p>Trap Games diseña y desarrolla experiencias de juego que inspiran emociones, cuentan historias memorables, que conectan jugadores de todo el mundo. Siempre comprometidos a dar la mejor experiencia en los videojuegos que desarrollamos y nos enfocamos más en la calidad.</p>
+      </div>
+      <div class="info-card">
+        <h4>Visión</h4>
+        <p>Ser reconocidos como una empresa creadora de buenas historias y experiencias que cautivan a los jugadores e inspiran a las nuevas generaciones de desarrolladores y dejan un impacto en la cultura game.</p>
+      </div>
+      <div class="info-card">
+        <h4>Valores</h4>
+        <p>inmersión y narrativa, colaboración y comunidad, superación y constancia, valentía creativa y trabajo en equipo</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slider-frame">
+    <ul>
+        <li><ion-img src="assets/img/panoramica.jpeg" alt="panoramica"></ion-img></li>
+        <li><ion-img src="assets/img/platica.jpeg" alt="panoramica 2"></ion-img></li>
+        <li><ion-img src="assets/img/panoramica.jpeg" alt="si"></ion-img></li>
+        <li><ion-img src="assets/img/mona.jpeg" alt="aparicion"></ion-img></li>
+      
+    </ul>
+</div>
+
   <app-footer></app-footer>
 </ion-content>

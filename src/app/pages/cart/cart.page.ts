@@ -16,7 +16,7 @@ import { loginService } from 'src/app/services/login/login.service';
     selector: 'app-cart',
     templateUrl: './cart.page.html',
     styleUrls: ['./cart.page.scss'],
-    imports: [CommonModule, FormsModule, IonicModule],
+    imports: [CommonModule, FormsModule, IonicModule,NavComponent, FooterComponent],
     standalone: true
 })
 export class ShoppingCartPage implements OnInit {

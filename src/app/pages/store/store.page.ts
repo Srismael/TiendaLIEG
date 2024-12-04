@@ -10,7 +10,8 @@ import { NavComponent } from 'src/app/components/nav/nav.component';
     selector: 'app-store',
     templateUrl: './store.page.html',
     styleUrls: ['./store.page.scss'],
-    imports: [IonContent,  CommonModule, FormsModule, ProductComponent, NavComponent]
+    imports: [IonContent,  CommonModule, FormsModule, ProductComponent, NavComponent],
+    standalone: true
 })
 export class StorePage implements OnInit {
 

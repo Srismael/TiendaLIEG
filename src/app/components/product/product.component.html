@@ -1,26 +1,28 @@
-<ion-content>
+
   <ion-list>
-    <ion-card *ngFor="let product of products">
-      <ion-card-header>
-        <ion-card-title>{{ product.name }}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>{{ product.description }}</p>
-        <p>Price: {{ product.price | currency:'USD' }}</p>
-        <p>Stock: {{ product.stock }}</p>
-        <ion-row>
-          <ion-col *ngFor="let image of product.images">
-            <img [src]="image ? image : 'assets/placeholder.png'" alt="{{ product.name }}" class="product-image">
-          </ion-col>
-        </ion-row>
-        <ion-chip color="primary">
-          <ion-label>{{ product.category }}</ion-label>
-        </ion-chip>
-        <!-- Botón para agregar al carrito -->
-        <ion-button expand="block" color="success" (click)="addToCart(product)">
-          Agregar al carrito
-        </ion-button>
-      </ion-card-content>
-    </ion-card>
+    <div class="product-grid">
+      <ion-card *ngFor="let product of products" class="product-card">
+        <ion-card-header>
+          <ion-card-title>{{ product.name }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-row class="image-row">
+            <ion-col *ngFor="let image of product.images" class="image-col">
+              <img [src]="image ? image : 'assets/placeholder.png'" alt="{{ product.name }}" class="product-image">
+            </ion-col>
+          </ion-row>
+          <p>Price: {{ product.price | currency:'USD' }}</p>
+          <p>{{ product.description }}</p>        
+          <ion-chip color="primary">
+            <ion-label>{{ product.category }}</ion-label>
+          </ion-chip>
+          <!-- Botón para agregar al carrito -->
+          <ion-button expand="block" color="success" (click)="addToCart(product)">
+            Agregar al carrito
+          </ion-button>
+          <p>Stock: {{ product.stock }}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
   </ion-list>
-</ion-content>
+

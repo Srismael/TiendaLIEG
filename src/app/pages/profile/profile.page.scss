@@ -1,5 +1,28 @@
-ion-button {
-    width: 100%; // Botón expandido a todo el ancho del formulario
-    max-width: 400px;
-    margin-top: 24px;
-  }
+.user-profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px; /* Limita el ancho máximo */
+  margin: 0 auto; /* Centra el contenedor */
+  padding: 16px;
+  text-align: center; /* Centra los textos */
+}
+
+.user-profile-container h2 {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.user-profile-container p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.logout-button {
+  width: 100%; /* Botón con ancho completo */
+  max-width: 400px; /* Limita el ancho máximo del botón */
+  margin-top: 24px;
+}

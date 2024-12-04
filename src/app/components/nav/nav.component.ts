@@ -8,7 +8,8 @@ import { logoIonic, home, cart, gameController, person, storefront, logInSharp, 
     selector: 'app-nav',
     templateUrl: './nav.component.html',
     styleUrls: ['./nav.component.scss'],
-    imports: [IonicModule, RouterLink]
+    imports: [IonicModule, RouterLink], 
+    standalone: true
 })
 export class NavComponent  implements OnInit {
 
